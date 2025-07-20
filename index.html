@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="id">
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfolio Gallery - Keola Mahatma</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <section id="portfolio-gallery">
+    <h2>Hi 👋 welcome to my Portfolio Gallery</h2>
+
+    <div class="filter-buttons">
+      <button data-filter="all" class="active">All</button>
+      <button data-filter="iot-project">IoT project</button>
+      <button data-filter="jakarta-international-science-fair">Jakarta International Science Fair</button>
+      <button data-filter="game-project">Game project</button>
+    </div>
+
+    <div class="gallery-grid">
+      <!-- IoT Project -->
+      <div class="item iot-project">
+        <img src="Iot project img.jpeg" alt="IoT project" />
+        <p class="project-title">Smart Farming IoT</p>
+
+        <div class="project-detail">
+          <p>Built a basic web interface using ESP8266 to display temperature and soil data in real-time. This sparked my interest in frontend development and user interaction.Developed collaboratively during a Project-Based Learning (PJBL) program in junior high school, this project won The Best PJBL 1 award.</p>
+          <img src="WEB HTML IoT.png" alt="WEB HTML IoT" />
+          <h4>Main features:</h4>
+          <ul>
+            <li>DHT22 sensor for air temperature and humidity</li>
+            <li>Dallas Temperature sensor for soil temperature</li>
+            <li>Analog soil moisture sensor</li>
+            <li>Automatic water pump controlled via ESP8266 web server</li>
+            <li>WiFi Access Point and monitoring web</li>
+          </ul>
+<p><strong>Technology Used:</strong> ESP8266, DHT22 sensor, Dallas Temperature sensor, HTML, CSS, JavaScript</p>
+
+          <h4>Code Snippet:</h4>
+          <pre><code>// Setup WiFi Access Point
+WiFi.softAP(ssid, password);
+WiFi.softAPConfig(local_ip, gateway, subnet);
+server.on("/", handle_OnConnect);
+server.begin();
+
+// Loop utama
+void loop() {
+  server.handleClient();
+  sensors.requestTemperatures();
+  temp = dht.readTemperature();
+  hum = dht.readHumidity();
+  kelembapanTanah = analogRead(pinSensorSoil);
+  persentasekelembapanTanah = map(kelembapanTanah, 330, 740, 100, 1);
+
+  if (Pumpotomatisstatus && persentasekelembapanTanah 60) {
+    digitalWrite(pinPump, HIGH);
+  } else {
+    digitalWrite(pinPump, LOW);
+  }
+
+  lcd.setCursor(0, 0);
+  lcd.print("Suhu: ");
+  lcd.print(temp);
+  lcd.print(" C");
+}
+</code></pre>
+        </div>
+      </div>
+
+      <!-- JISF - Wastevolt Project -->
+      <div class="item jakarta-international-science-fair">
+        <img src="Jakarta International Scince.png" alt="JISF" class="small-img" />
+     <p class="project-title" style="margin-bottom: 15px;">WasteVolt</p>
+        <div class="project-detail">
+          <h4>Domestic Waste as a Sustainable Energy Empowerment</h4>
+          <p><strong>🧪 Field :</strong> Environmental Science ☀️ </p>
+          <p> My achievement</p>
+         <img src="JISF KEOLA 9A.png" alt="sertifikat" style="width: 500px; height: auto; display: block; 
+  margin: 20px auto; " />
+          <p><strong>☀️ Project description :</strong> An innovative solution transforming domestic waste into electrical energy.
+Eco-friendly and sustainable.
+Wastevolt is designed to help address the global challenges of waste accumulation and energy scarcity. Our advanced technology processes both organic and inorganic household waste to generate clean electricity, reducing environmental impact while promoting renewable energy solutions.
+By combining scientific research with environmentally friendly methods, Wastevolt offers a smart approach to turning everyday waste into a valuable energy source.</p>
+          <p><strong>Background :</strong> With the increasing volume of domestic waste and the ongoing global energy crisis, it is crucial to find integrated solutions that address both challenges simultaneously. Household waste, if properly managed, holds significant potential as an alternative energy source. This project aims to shift public perception — showing that waste is not merely garbage, but a renewable resource that can be utilized productively. </p>
+
+        </div>
+      </div>
+
+   <!-- Game Project -->
+<div class="item game-project">
+  <!-- Link ke project Scratch -->
+  <a href="https://scratch.mit.edu/projects/1034310823" target="_blank">
+    <img src="thumbnail-scratch.png" alt="Scratch Game Thumbnail" class="small-img" />
+  </a>
+
+  <!-- Judul di bawah gambar -->
+  <p class="project-title">Nusa Flavor</p>
+
+  <div class="project-detail">
+    <h4>🥨 Nusa Flavor</h4>
+    <p><strong>Description:</strong><br>
+      Nusa Flavor is a Scratch-based cooking game where players prepare traditional dishes from Papua, Indonesia, such as <em>Papeda</em> and <em>Ikan Kuah Kuning</em>. Developed collaboratively during a Project-Based Learning (PJBL) program in junior high school, this project won <strong>The Best PJBL 1</strong> award.
+    </p>
+    <p><strong>Frontend Relevance:</strong><br>
+      This game demonstrates fundamental frontend concepts such as user interface design, interactive elements, and logical flow — building my early interest in user experience and web interaction.
+    </p>
+    <p><strong>Technology Used:</strong> Scratch visual programming</p>
+    <p>🔗 <a href="https://scratch.mit.edu/projects/1034310823" target="_blank">Play Nusa Flavor on Scratch</a></p>
+  </div>
+</div>
+<div id="emoji" style="font-size: 100px; position: fixed; top: 20px; left: 20px; cursor: pointer;">
+  🥳
+</div>
+<div id="emoji" style="font-size: 100px; position: fixed; bottom: 20px; right: 20px; cursor: pointer;">
+  🎉
+</div>
+<p>Watch demo video: <a href="https://drive.google.com/drive/folders/1b4MkdjFWXywjT3Ccr5bIGCW6YCkE0zyx?usp=sharing" target="_blank" rel="noopener noreferrer">Demo Video</a></p>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

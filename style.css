@@ -1,0 +1,133 @@
+/* Reset dan basic styling */
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background: #f0c6e1;
+  color: #333;
+  margin: 0;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Container tombol filter */
+.filter-buttons {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Styling tombol filter */
+.filter-buttons button {
+  margin: 0 8px;
+  padding: 10px 22px;
+  border: none;
+  background-color: #a7d5f3; /* biru terang */
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+/* Saat tombol aktif atau hover */
+.filter-buttons button.active,
+.filter-buttons button:hover {
+  background-color: #2c3e50; /* biru gelap */
+  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
+
+/* Grid portfolio */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Item portfolio */
+.item {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover efek pada item */
+.item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* Gambar portfolio */
+.item img {
+  width: 100%;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+/* Zoom gambar saat hover */
+.item:hover img {
+  transform: scale(1.05);
+}
+
+/* Deskripsi project */
+.item p {
+  padding: 12px 16px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #444;
+}
+/* Buat code nya Iot */
+pre code {
+  display: block;
+  background-color: #f4f4f4;
+  color: #333;
+  padding: 16px;
+  border-radius: 6px;
+  overflow-x: auto;
+  font-family: Consolas, 'Courier New', monospace;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.project-detail {
+  display: none;
+  margin-top: 10px;
+}
+.item.iot-project img {
+  max-width: 300px; /* Ubah ukuran sesuai keinginan */
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+  margin: 20px auto 0;
+}
+p {
+  font-weight: normal; /* default */
+}
+p b, p strong {
+  font-weight: bold;
+}
+.small-img {
+  width: 250px;
+  height: auto;
+  margin-top: 20px; /* ini buat menurunkan gambar */
+}
+iframe {
+  display: block;
+  margin: 20px auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.small-img {
+  display: block;
+  margin: 20px auto;
+  width: 250px;
+  height: auto;
+}
